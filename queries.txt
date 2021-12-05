@@ -1,0 +1,21 @@
+1)  Count the number of Salesperson whose name begin with ‘a’/’A’.
+
+--> SELECT * FROM salespeople WHERE Sname LIKE 'a%';
+
+--> SELECT Sname, COUNT(Sname) FROM salespeople WHERE Sname LIKE 'a%' GROUP BY Sname;
+
+Q2) Display all the Salesperson whose all orders worth is more than Rs. 2000.
+
+--> SELECT salespeople.Sname,orders.Snum,orders.Amt FROM orders,salespeople WHERE ordes.Amt>2000 AND orders.Snum=salespeople.Snum;
+
+Q3) Count the number of Salesperson belonging to Newyork.
+
+--> SELECT Sname,City,COUNT(Snum) FROM salespeople Where City = 'Newyork';
+
+Q4) Display the number of Salespeople belonging to London and belonging to Paris.
+
+--> SELECT Sname FROM salespeople Where City = 'London' OR City ='Paris';
+
+Q5)  Display the number of orders taken by each Salesperson and their date of orders.
+
+--> SELECT orders.Snum,salespeople.Sname,COUNT(Onum) FROM ordes,salespeople WHERE orders.Snum = salespeople.Snum GROUP BY salespeople.Snum;
